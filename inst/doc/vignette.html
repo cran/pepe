@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Seyma Kalay" />
+
+
+<title>Pepe Vignette</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Pepe Vignette</h1>
+<h4 class="author">Seyma Kalay</h4>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pepe)</span></code></pre></div>
+<p>This package was set for the data visualization. First thing let’s
+see the str of the <em>sample_data</em> with
+<code>str(sample_data)</code>.</p>
+<p><code>Plot.by.Factr</code> function will create plotting.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> sample_data[<span class="fu">c</span>(<span class="st">&quot;Formal&quot;</span>,<span class="st">&quot;Informal&quot;</span>,<span class="st">&quot;L.Both&quot;</span>,<span class="st">&quot;No.Loan&quot;</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;sex&quot;</span>,<span class="st">&quot;educ&quot;</span>,<span class="st">&quot;political.afl&quot;</span>,<span class="st">&quot;married&quot;</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;havejob&quot;</span>,<span class="st">&quot;rural&quot;</span>,<span class="st">&quot;age&quot;</span>,<span class="st">&quot;Income&quot;</span>,<span class="st">&quot;Networth&quot;</span>,<span class="st">&quot;Liquid.Assets&quot;</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;NW.HE&quot;</span>,<span class="st">&quot;fin.knowldge&quot;</span>,<span class="st">&quot;fin.intermdiaries&quot;</span>)]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> CN <span class="ot">=</span> <span class="fu">colnames</span>(df)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a> var <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;educ&quot;</span>,<span class="st">&quot;rural&quot;</span>,<span class="st">&quot;sex&quot;</span>,<span class="st">&quot;havejob&quot;</span>,<span class="st">&quot;political.afl&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> name.levels <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Formal&quot;</span>,<span class="st">&quot;Informal&quot;</span>,<span class="st">&quot;L.Both&quot;</span>,<span class="st">&quot;No.Loan&quot;</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;sex&quot;</span>,<span class="st">&quot;educ&quot;</span>,<span class="st">&quot;political.afl&quot;</span>,<span class="st">&quot;married&quot;</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;havejob&quot;</span>,<span class="st">&quot;rural&quot;</span>,<span class="st">&quot;age&quot;</span>,<span class="st">&quot;Income&quot;</span>,<span class="st">&quot;Networth&quot;</span>,<span class="st">&quot;Liquid.Assets&quot;</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;NW.HE&quot;</span>,<span class="st">&quot;fin.knowldge&quot;</span>,<span class="st">&quot;fin.intermdiaries&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>XXX <span class="ot">&lt;-</span> <span class="fu">df4.Plot.by.Factr</span>(var,df)<span class="sc">$</span>Summ.Stats.long</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">Plot.by.Factr</span>(XXX, name.levels)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Selecting by Mean</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: Transformation introduced infinite values in continuous x-axis</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Transformation introduced infinite values in continuous x-axis</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Selecting by Mean</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis
+#&gt; Selecting by Mean
+#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis
+#&gt; Selecting by Mean
+#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis
+#&gt; Selecting by Mean
+#&gt; Joining, by = c(&quot;Variable&quot;, &quot;Mean&quot;)</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<pre><code>#&gt; Warning: Transformation introduced infinite values in continuous x-axis
+#&gt; Transformation introduced infinite values in continuous x-axis</code></pre>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p><code>df4.Plot.by.Factr</code> function will create group stats.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df4.Plot.by.Factr</span>(var,df)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[1]]</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                       educ_0      educ_1  educ_diff</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   56.233      48.944      7.289</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             50112.134  111281.618  61169.485</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          498209.669 1270342.194 772132.524</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     542379.811 1343952.158 801572.347</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             482692.708 1187307.896 704615.189</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.059       0.238      0.179</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.172       0.071      0.101</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.041       0.062      0.020</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.727       0.629      0.098</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.778       0.730      0.049</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.000       1.000      1.000</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.122       0.341      0.219</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.859       0.861      0.002</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.627       0.671      0.044</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.562       0.879      0.317</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.019       0.129      0.110</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.179       0.196      0.017</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[2]]</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                      rural_0     rural_1 rural_diff</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   55.830      52.914      2.917</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             41979.507   83801.586  41822.079</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          283621.530  980214.349 696592.819</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     320888.314 1042114.177 721225.863</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             274315.470  928913.998 654598.528</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.047       0.152      0.104</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.216       0.101      0.114</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.049       0.047      0.002</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.688       0.700      0.012</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.878       0.704      0.174</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.116       0.425      0.309</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.125       0.226      0.100</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.886       0.847      0.039</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.773       0.574      0.198</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.000       1.000      1.000</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.017       0.074      0.057</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.195       0.180      0.015</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[3]]</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                        sex_0      sex_1   sex_diff</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   54.226     53.792      0.434</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             69848.240  69695.249    152.991</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          856991.073 711293.342 145697.731</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     913497.514 764005.787 149491.727</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             813350.902 676132.915 137217.987</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.138      0.110      0.028</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.111      0.149      0.038</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.043      0.049      0.007</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.709      0.692      0.017</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.000      1.000      1.000</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.366      0.307      0.059</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.159      0.202      0.043</span></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.691      0.913      0.222</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.438      0.704      0.266</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.828      0.613      0.215</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.067      0.050      0.017</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.176      0.187      0.011</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[4]]</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                    havejob_0  havejob_1 havejob_diff</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   63.576     48.475       15.101</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             56781.006  76982.126    20201.120</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth          757974.392 739081.250    18893.142</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets     805614.836 796037.507     9577.329</span></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE             742160.748 689950.830    52209.918</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                 0.058      0.149        0.092</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal               0.114      0.154        0.040</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                 0.024      0.062        0.038</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                0.804      0.635        0.169</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                    0.628      0.838        0.210</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                   0.294      0.336        0.041</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl          0.219      0.177        0.042</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                0.784      0.903        0.119</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                0.000      1.000        1.000</span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                  0.787      0.595        0.192</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge           0.046      0.059        0.013</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries      0.195      0.179        0.017</span></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats[[5]]</span></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   political.afl_0 political.afl_1 political.afl_diff</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                        53.461          55.724              2.263</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income                  64184.651       93097.169          28912.518</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth               661085.850     1102973.001         441887.150</span></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets          711676.724     1169314.401         457637.677</span></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE                  630009.072     1040123.664         410114.592</span></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal                      0.101           0.182              0.081</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal                    0.154           0.081              0.073</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both                      0.047           0.051              0.004</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan                     0.698           0.686              0.013</span></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex                         0.753           0.803              0.050</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ                        0.262           0.569              0.308</span></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl               0.000           1.000              1.000</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married                     0.852           0.894              0.042</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob                     0.653           0.591              0.063</span></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural                       0.636           0.780              0.145</span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge                0.040           0.116              0.076</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries           0.188           0.171              0.017</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long</span></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[1]]</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff Levels        Mean          Variable</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       7.289 educ_0      56.233               age</span></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   61169.485 educ_0   50112.134            Income</span></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  772132.524 educ_0  498209.669          Networth</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  801572.347 educ_0  542379.811     Liquid.Assets</span></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  704615.189 educ_0  482692.708             NW.HE</span></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.179 educ_0       0.059            Formal</span></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.101 educ_0       0.172          Informal</span></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.020 educ_0       0.041            L.Both</span></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.098 educ_0       0.727           No.Loan</span></span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      0.049 educ_0       0.778               sex</span></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      1.000 educ_0       0.000              educ</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      0.219 educ_0       0.122     political.afl</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.002 educ_0       0.859           married</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.044 educ_0       0.627           havejob</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      0.317 educ_0       0.562             rural</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.110 educ_0       0.019      fin.knowldge</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.017 educ_0       0.179 fin.intermdiaries</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      7.289 educ_1      48.944               age</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  61169.485 educ_1  111281.618            Income</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 772132.524 educ_1 1270342.194          Networth</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 801572.347 educ_1 1343952.158     Liquid.Assets</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 704615.189 educ_1 1187307.896             NW.HE</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.179 educ_1       0.238            Formal</span></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.101 educ_1       0.071          Informal</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.020 educ_1       0.062            L.Both</span></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.098 educ_1       0.629           No.Loan</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      0.049 educ_1       0.730               sex</span></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      1.000 educ_1       1.000              educ</span></span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      0.219 educ_1       0.341     political.afl</span></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.002 educ_1       0.861           married</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.044 educ_1       0.671           havejob</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      0.317 educ_1       0.879             rural</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.110 educ_1       0.129      fin.knowldge</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.017 educ_1       0.196 fin.intermdiaries</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[2]]</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff  Levels        Mean          Variable</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       2.917 rural_0      55.830               age</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   41822.079 rural_0   41979.507            Income</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  696592.819 rural_0  283621.530          Networth</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  721225.863 rural_0  320888.314     Liquid.Assets</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  654598.528 rural_0  274315.470             NW.HE</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.104 rural_0       0.047            Formal</span></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.114 rural_0       0.216          Informal</span></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.002 rural_0       0.049            L.Both</span></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.012 rural_0       0.688           No.Loan</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      0.174 rural_0       0.878               sex</span></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      0.309 rural_0       0.116              educ</span></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      0.100 rural_0       0.125     political.afl</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.039 rural_0       0.886           married</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.198 rural_0       0.773           havejob</span></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      1.000 rural_0       0.000             rural</span></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.057 rural_0       0.017      fin.knowldge</span></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.015 rural_0       0.195 fin.intermdiaries</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      2.917 rural_1      52.914               age</span></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  41822.079 rural_1   83801.586            Income</span></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 696592.819 rural_1  980214.349          Networth</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 721225.863 rural_1 1042114.177     Liquid.Assets</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 654598.528 rural_1  928913.998             NW.HE</span></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.104 rural_1       0.152            Formal</span></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.114 rural_1       0.101          Informal</span></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.002 rural_1       0.047            L.Both</span></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.012 rural_1       0.700           No.Loan</span></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      0.174 rural_1       0.704               sex</span></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      0.309 rural_1       0.425              educ</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      0.100 rural_1       0.226     political.afl</span></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.039 rural_1       0.847           married</span></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.198 rural_1       0.574           havejob</span></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      1.000 rural_1       1.000             rural</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.057 rural_1       0.074      fin.knowldge</span></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.015 rural_1       0.180 fin.intermdiaries</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[3]]</span></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff Levels       Mean          Variable</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       0.434  sex_0     54.226               age</span></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2     152.991  sex_0  69848.240            Income</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  145697.731  sex_0 856991.073          Networth</span></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  149491.727  sex_0 913497.514     Liquid.Assets</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  137217.987  sex_0 813350.902             NW.HE</span></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.028  sex_0      0.138            Formal</span></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.038  sex_0      0.111          Informal</span></span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.007  sex_0      0.043            L.Both</span></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.017  sex_0      0.709           No.Loan</span></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      1.000  sex_0      0.000               sex</span></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      0.059  sex_0      0.366              educ</span></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      0.043  sex_0      0.159     political.afl</span></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.222  sex_0      0.691           married</span></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.266  sex_0      0.438           havejob</span></span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      0.215  sex_0      0.828             rural</span></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.017  sex_0      0.067      fin.knowldge</span></span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.011  sex_0      0.176 fin.intermdiaries</span></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      0.434  sex_1     53.792               age</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19    152.991  sex_1  69695.249            Income</span></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 145697.731  sex_1 711293.342          Networth</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 149491.727  sex_1 764005.787     Liquid.Assets</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 137217.987  sex_1 676132.915             NW.HE</span></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.028  sex_1      0.110            Formal</span></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.038  sex_1      0.149          Informal</span></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.007  sex_1      0.049            L.Both</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.017  sex_1      0.692           No.Loan</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      1.000  sex_1      1.000               sex</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      0.059  sex_1      0.307              educ</span></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      0.043  sex_1      0.202     political.afl</span></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.222  sex_1      0.913           married</span></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.266  sex_1      0.704           havejob</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      0.215  sex_1      0.613             rural</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.017  sex_1      0.050      fin.knowldge</span></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.011  sex_1      0.187 fin.intermdiaries</span></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[4]]</span></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         Diff    Levels       Mean          Variable</span></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     15.101 havejob_0     63.576               age</span></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  20201.120 havejob_0  56781.006            Income</span></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  18893.142 havejob_0 757974.392          Networth</span></span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4   9577.329 havejob_0 805614.836     Liquid.Assets</span></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  52209.918 havejob_0 742160.748             NW.HE</span></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6      0.092 havejob_0      0.058            Formal</span></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7      0.040 havejob_0      0.114          Informal</span></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8      0.038 havejob_0      0.024            L.Both</span></span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9      0.169 havejob_0      0.804           No.Loan</span></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10     0.210 havejob_0      0.628               sex</span></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11     0.041 havejob_0      0.294              educ</span></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12     0.042 havejob_0      0.219     political.afl</span></span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13     0.119 havejob_0      0.784           married</span></span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14     1.000 havejob_0      0.000           havejob</span></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15     0.192 havejob_0      0.787             rural</span></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16     0.013 havejob_0      0.046      fin.knowldge</span></span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17     0.017 havejob_0      0.195 fin.intermdiaries</span></span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18    15.101 havejob_1     48.475               age</span></span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19 20201.120 havejob_1  76982.126            Income</span></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 18893.142 havejob_1 739081.250          Networth</span></span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21  9577.329 havejob_1 796037.507     Liquid.Assets</span></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 52209.918 havejob_1 689950.830             NW.HE</span></span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23     0.092 havejob_1      0.149            Formal</span></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24     0.040 havejob_1      0.154          Informal</span></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25     0.038 havejob_1      0.062            L.Both</span></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26     0.169 havejob_1      0.635           No.Loan</span></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27     0.210 havejob_1      0.838               sex</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28     0.041 havejob_1      0.336              educ</span></span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29     0.042 havejob_1      0.177     political.afl</span></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30     0.119 havejob_1      0.903           married</span></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31     1.000 havejob_1      1.000           havejob</span></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32     0.192 havejob_1      0.595             rural</span></span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33     0.013 havejob_1      0.059      fin.knowldge</span></span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34     0.017 havejob_1      0.179 fin.intermdiaries</span></span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $Summ.Stats.long[[5]]</span></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Diff          Levels        Mean          Variable</span></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       2.263 political.afl_0      53.461               age</span></span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   28912.518 political.afl_0   64184.651            Income</span></span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  441887.150 political.afl_0  661085.850          Networth</span></span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  457637.677 political.afl_0  711676.724     Liquid.Assets</span></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  410114.592 political.afl_0  630009.072             NW.HE</span></span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6       0.081 political.afl_0       0.101            Formal</span></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7       0.073 political.afl_0       0.154          Informal</span></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8       0.004 political.afl_0       0.047            L.Both</span></span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9       0.013 political.afl_0       0.698           No.Loan</span></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10      0.050 political.afl_0       0.753               sex</span></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11      0.308 political.afl_0       0.262              educ</span></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12      1.000 political.afl_0       0.000     political.afl</span></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13      0.042 political.afl_0       0.852           married</span></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14      0.063 political.afl_0       0.653           havejob</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15      0.145 political.afl_0       0.636             rural</span></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      0.076 political.afl_0       0.040      fin.knowldge</span></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17      0.017 political.afl_0       0.188 fin.intermdiaries</span></span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18      2.263 political.afl_1      55.724               age</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  28912.518 political.afl_1   93097.169            Income</span></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 441887.150 political.afl_1 1102973.001          Networth</span></span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21 457637.677 political.afl_1 1169314.401     Liquid.Assets</span></span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22 410114.592 political.afl_1 1040123.664             NW.HE</span></span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23      0.081 political.afl_1       0.182            Formal</span></span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24      0.073 political.afl_1       0.081          Informal</span></span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25      0.004 political.afl_1       0.051            L.Both</span></span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26      0.013 political.afl_1       0.686           No.Loan</span></span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27      0.050 political.afl_1       0.803               sex</span></span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28      0.308 political.afl_1       0.569              educ</span></span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29      1.000 political.afl_1       1.000     political.afl</span></span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30      0.042 political.afl_1       0.894           married</span></span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31      0.063 political.afl_1       0.591           havejob</span></span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32      0.145 political.afl_1       0.780             rural</span></span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33      0.076 political.afl_1       0.116      fin.knowldge</span></span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34      0.017 political.afl_1       0.171 fin.intermdiaries</span></span></code></pre></div>
+<p><code>Stats.by.Factr</code> function will create group stats.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">Stats.by.Factr</span>(var, df)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $educ.0</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         mean         sd     n   median        min      max</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                 1.06       0.24 22256      1.0        1.0        2</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*               1.17       0.38 22256      1.0        1.0        2</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                 1.04       0.20 22256      1.0        1.0        2</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                1.73       0.45 22256      2.0        1.0        2</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    1.78       0.42 22256      2.0        1.0        2</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                   1.00       0.00 22256      1.0        1.0        1</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*          1.12       0.33 22256      1.0        1.0        2</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                1.86       0.35 22256      2.0        1.0        2</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                1.63       0.48 22256      2.0        1.0        2</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  1.56       0.50 22256      2.0        1.0        2</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                    56.23      13.40 22256     57.0       17.0      101</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              50112.13  127502.75 22256  31681.5  -800000.0  5000000</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           498209.67 1187345.68 22256 193778.0  -627904.2 19999748</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      542379.81 1206224.03 22256 229982.1        0.0 20000000</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              482692.71 1143011.42 22256 189322.6 -1490700.0 19999748</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*           1.02       0.14 22256      1.0        1.0        2</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*      1.18       0.38 22256      1.0        1.0        2</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             3.74    11.97</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           1.74     1.02</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             4.60    19.21</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -1.02    -0.96</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*               -1.34    -0.20</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                NaN      NaN</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*      2.32     3.36</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -2.07     2.28</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*           -0.53    -1.72</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*             -0.25    -1.94</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                 0.00    -0.43</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             23.96   819.95</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            9.07   117.71</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       8.97   115.38</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               8.93   116.05</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       6.98    46.77</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.67     0.80</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $educ.1</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                          mean         sd     n   median        min      max</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                  1.24       0.43 10509      1.0        1.0        2</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*                1.07       0.26 10509      1.0        1.0        2</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                  1.06       0.24 10509      1.0        1.0        2</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                 1.63       0.48 10509      2.0        1.0        2</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                     1.73       0.44 10509      2.0        1.0        2</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                    2.00       0.00 10509      2.0        2.0        2</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*           1.34       0.47 10509      1.0        1.0        2</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                 1.86       0.35 10509      2.0        1.0        2</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                 1.67       0.47 10509      2.0        1.0        2</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                   1.88       0.33 10509      2.0        1.0        2</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                     48.94      14.82 10509     49.0       17.0       93</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              111281.62  242540.61 10509  66840.0  -800000.0  5000000</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           1270342.19 2151333.30 10509 604400.0  -277925.9 19956044</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      1343952.16 2190862.93 10509 669550.0        0.0 20000000</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              1187307.90 2040298.96 10509 558724.2 -3614776.0 19956044</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*            1.13       0.34 10509      1.0        1.0        2</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*       1.20       0.40 10509      1.0        1.0        2</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             1.23    -0.49</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           3.34     9.16</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             3.64    11.23</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -0.53    -1.71</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*               -1.03    -0.93</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                NaN      NaN</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*      0.67    -1.55</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -2.09     2.37</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*           -0.73    -1.47</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*             -2.32     3.39</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                 0.27    -0.50</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             11.91   197.81</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            4.65    28.89</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       4.63    28.72</span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               4.71    30.01</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       2.21     2.90</span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.53     0.34</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $rural.0</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         mean        sd     n   median        min      max  skew</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                 1.05      0.21 11023      1.0        1.0        2  4.27</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*               1.22      0.41 11023      1.0        1.0        2  1.38</span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                 1.05      0.22 11023      1.0        1.0        2  4.17</span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                1.69      0.46 11023      2.0        1.0        2 -0.81</span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    1.88      0.33 11023      2.0        1.0        2 -2.31</span></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                   1.12      0.32 11023      1.0        1.0        2  2.40</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*          1.13      0.33 11023      1.0        1.0        2  2.26</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                1.89      0.32 11023      2.0        1.0        2 -2.43</span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                1.77      0.42 11023      2.0        1.0        2 -1.30</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  1.00      0.00 11023      1.0        1.0        1   NaN</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                    55.83     12.52 11023     55.0       17.0       99  0.05</span></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              41979.51 113869.22 11023  23100.0  -800000.0  5000000 25.49</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           283621.53 765713.39 11023 117909.1  -315514.9 19842100 12.53</span></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      320888.31 782991.65 11023 150426.4        0.0 20000000 12.32</span></span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              274315.47 739872.21 11023 114235.3 -1136884.0 19842100 12.78</span></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*           1.02      0.13 11023      1.0        1.0        2  7.48</span></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*      1.19      0.40 11023      1.0        1.0        2  1.54</span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                    kurtosis</span></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*               16.20</span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*             -0.09</span></span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*               15.39</span></span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*              -1.34</span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                   3.36</span></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                  3.78</span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*         3.13</span></span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*               3.90</span></span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*              -0.31</span></span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  NaN</span></span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   -0.33</span></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              1015.45</span></span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth             224.93</span></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets        218.09</span></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE                237.81</span></span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*         53.95</span></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*     0.38</span></span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $rural.1</span></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                          mean         sd     n   median        min      max</span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                  1.15       0.36 21742      1.0        1.0        2</span></span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*                1.10       0.30 21742      1.0        1.0        2</span></span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                  1.05       0.21 21742      1.0        1.0        2</span></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                 1.70       0.46 21742      2.0        1.0        2</span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                     1.70       0.46 21742      2.0        1.0        2</span></span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                    1.42       0.49 21742      1.0        1.0        2</span></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*           1.23       0.42 21742      1.0        1.0        2</span></span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                 1.85       0.36 21742      2.0        1.0        2</span></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                 1.57       0.49 21742      2.0        1.0        2</span></span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                   2.00       0.00 21742      2.0        2.0        2</span></span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                     52.91      15.01 21742     52.0       17.0      101</span></span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income               83801.59  197838.45 21742  51028.0  -800000.0  5000000</span></span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            980214.35 1848058.17 21742 437612.4  -627904.2 19999748</span></span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      1042114.18 1880008.03 21742 494240.0        0.0 20000000</span></span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               928914.00 1758036.37 21742 413127.2 -3614776.0 19999748</span></span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*            1.07       0.26 21742      1.0        1.0        2</span></span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*       1.18       0.38 21742      1.0        1.0        2</span></span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             1.94     1.77</span></span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           2.65     5.00</span></span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             4.26    16.18</span></span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -0.87    -1.24</span></span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*               -0.89    -1.20</span></span>
+<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*               0.30    -1.91</span></span>
+<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*      1.31    -0.28</span></span>
+<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -1.93     1.71</span></span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*           -0.30    -1.91</span></span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*               NaN      NaN</span></span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                 0.07    -0.62</span></span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             14.90   308.53</span></span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            5.64    43.48</span></span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       5.61    43.02</span></span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               5.66    44.32</span></span>
+<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       3.27     8.68</span></span>
+<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.67     0.79</span></span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sex.0</span></span>
+<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         mean         sd    n   median        min      max  skew</span></span>
+<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                 1.14       0.34 7774      1.0        1.0        2  2.10</span></span>
+<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*               1.11       0.31 7774      1.0        1.0        2  2.48</span></span>
+<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                 1.04       0.20 7774      1.0        1.0        2  4.51</span></span>
+<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                1.71       0.45 7774      2.0        1.0        2 -0.92</span></span>
+<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    1.00       0.00 7774      1.0        1.0        1   NaN</span></span>
+<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                   1.37       0.48 7774      1.0        1.0        2  0.56</span></span>
+<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*          1.16       0.37 7774      1.0        1.0        2  1.86</span></span>
+<span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                1.69       0.46 7774      2.0        1.0        2 -0.83</span></span>
+<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                1.44       0.50 7774      1.0        1.0        2  0.25</span></span>
+<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  1.83       0.38 7774      2.0        1.0        2 -1.73</span></span>
+<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                    54.23      15.82 7774     54.0       17.0      101 -0.02</span></span>
+<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              69848.24  162853.21 7774  41200.0  -497000.0  5000000 15.92</span></span>
+<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           856991.07 1709612.37 7774 343647.5  -224187.3 19968200  5.79</span></span>
+<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      913497.51 1744638.87 7774 392846.6        0.0 20000000  5.78</span></span>
+<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              813350.90 1616830.46 7774 323163.8 -1294996.0 19968200  5.69</span></span>
+<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*           1.07       0.25 7774      1.0        1.0        2  3.45</span></span>
+<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*      1.18       0.38 7774      1.0        1.0        2  1.70</span></span>
+<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                    kurtosis</span></span>
+<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                2.41</span></span>
+<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*              4.16</span></span>
+<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*               18.31</span></span>
+<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*              -1.16</span></span>
+<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    NaN</span></span>
+<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                 -1.69</span></span>
+<span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*         1.47</span></span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*              -1.32</span></span>
+<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*              -1.94</span></span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                 1.00</span></span>
+<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                   -0.71</span></span>
+<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income               385.60</span></span>
+<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth              47.07</span></span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets         46.88</span></span>
+<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE                 46.02</span></span>
+<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*          9.90</span></span>
+<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*     0.90</span></span>
+<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $sex.1</span></span>
+<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         mean         sd     n   median        min      max</span></span>
+<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                 1.11       0.31 24991      1.0        1.0        2</span></span>
+<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*               1.15       0.36 24991      1.0        1.0        2</span></span>
+<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                 1.05       0.22 24991      1.0        1.0        2</span></span>
+<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                1.69       0.46 24991      2.0        1.0        2</span></span>
+<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    2.00       0.00 24991      2.0        2.0        2</span></span>
+<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                   1.31       0.46 24991      1.0        1.0        2</span></span>
+<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*          1.20       0.40 24991      1.0        1.0        2</span></span>
+<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                1.91       0.28 24991      2.0        1.0        2</span></span>
+<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                1.70       0.46 24991      2.0        1.0        2</span></span>
+<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  1.61       0.49 24991      2.0        1.0        2</span></span>
+<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                    53.79      13.77 24991     53.0       17.0       98</span></span>
+<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              69695.25  178977.35 24991  41906.0  -800000.0  5000000</span></span>
+<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           711293.34 1567726.43 24991 268824.5  -627904.2 19999748</span></span>
+<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      764005.79 1595467.69 24991 311500.0        0.0 20000000</span></span>
+<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              676132.91 1496042.85 24991 256900.0 -3614776.0 19999748</span></span>
+<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*           1.05       0.22 24991      1.0        1.0        2</span></span>
+<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*      1.19       0.39 24991      1.0        1.0        2</span></span>
+<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             2.49     4.22</span></span>
+<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           1.97     1.90</span></span>
+<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             4.15    15.25</span></span>
+<span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -0.83    -1.31</span></span>
+<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                 NaN      NaN</span></span>
+<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*               0.84    -1.30</span></span>
+<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*      1.48     0.20</span></span>
+<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -2.92     6.54</span></span>
+<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*           -0.90    -1.20</span></span>
+<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*             -0.46    -1.79</span></span>
+<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                 0.03    -0.45</span></span>
+<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             16.84   396.16</span></span>
+<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            6.77    62.97</span></span>
+<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       6.71    61.89</span></span>
+<span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               6.85    65.14</span></span>
+<span id="cb8-227"><a href="#cb8-227" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       4.11    14.85</span></span>
+<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.60     0.57</span></span>
+<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $havejob.0</span></span>
+<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         mean         sd     n   median        min      max</span></span>
+<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                 1.06       0.23 11760      1.0        1.0        2</span></span>
+<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*               1.11       0.32 11760      1.0        1.0        2</span></span>
+<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                 1.02       0.15 11760      1.0        1.0        2</span></span>
+<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                1.80       0.40 11760      2.0        1.0        2</span></span>
+<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    1.63       0.48 11760      2.0        1.0        2</span></span>
+<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                   1.29       0.46 11760      1.0        1.0        2</span></span>
+<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*          1.22       0.41 11760      1.0        1.0        2</span></span>
+<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                1.78       0.41 11760      2.0        1.0        2</span></span>
+<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                1.00       0.00 11760      1.0        1.0        1</span></span>
+<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  1.79       0.41 11760      2.0        1.0        2</span></span>
+<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                    63.58      13.10 11760     65.0       17.0      101</span></span>
+<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              56781.01  155653.05 11760  36600.0  -800000.0  5000000</span></span>
+<span id="cb8-244"><a href="#cb8-244" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           757974.39 1474245.30 11760 306132.7  -627904.2 19951804</span></span>
+<span id="cb8-245"><a href="#cb8-245" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      805614.84 1495360.94 11760 351125.2        0.0 20000000</span></span>
+<span id="cb8-246"><a href="#cb8-246" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              742160.75 1432865.69 11760 300375.0 -1017962.0 19951804</span></span>
+<span id="cb8-247"><a href="#cb8-247" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*           1.05       0.21 11760      1.0        1.0        2</span></span>
+<span id="cb8-248"><a href="#cb8-248" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*      1.20       0.40 11760      1.0        1.0        2</span></span>
+<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-250"><a href="#cb8-250" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             3.79    12.35</span></span>
+<span id="cb8-251"><a href="#cb8-251" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           2.43     3.88</span></span>
+<span id="cb8-252"><a href="#cb8-252" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             6.28    37.47</span></span>
+<span id="cb8-253"><a href="#cb8-253" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -1.53     0.36</span></span>
+<span id="cb8-254"><a href="#cb8-254" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*               -0.53    -1.72</span></span>
+<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*               0.90    -1.18</span></span>
+<span id="cb8-256"><a href="#cb8-256" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*      1.36    -0.15</span></span>
+<span id="cb8-257"><a href="#cb8-257" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -1.38    -0.10</span></span>
+<span id="cb8-258"><a href="#cb8-258" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*             NaN      NaN</span></span>
+<span id="cb8-259"><a href="#cb8-259" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*             -1.40    -0.04</span></span>
+<span id="cb8-260"><a href="#cb8-260" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                -0.67     0.63</span></span>
+<span id="cb8-261"><a href="#cb8-261" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             21.44   598.68</span></span>
+<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            6.11    56.40</span></span>
+<span id="cb8-263"><a href="#cb8-263" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       6.10    56.30</span></span>
+<span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               5.91    52.93</span></span>
+<span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       4.32    16.66</span></span>
+<span id="cb8-266"><a href="#cb8-266" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.54     0.36</span></span>
+<span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $havejob.1</span></span>
+<span id="cb8-269"><a href="#cb8-269" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         mean         sd     n   median        min      max</span></span>
+<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                 1.15       0.36 21005      1.0        1.0        2</span></span>
+<span id="cb8-271"><a href="#cb8-271" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*               1.15       0.36 21005      1.0        1.0        2</span></span>
+<span id="cb8-272"><a href="#cb8-272" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                 1.06       0.24 21005      1.0        1.0        2</span></span>
+<span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                1.64       0.48 21005      2.0        1.0        2</span></span>
+<span id="cb8-274"><a href="#cb8-274" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    1.84       0.37 21005      2.0        1.0        2</span></span>
+<span id="cb8-275"><a href="#cb8-275" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                   1.34       0.47 21005      1.0        1.0        2</span></span>
+<span id="cb8-276"><a href="#cb8-276" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*          1.18       0.38 21005      1.0        1.0        2</span></span>
+<span id="cb8-277"><a href="#cb8-277" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                1.90       0.30 21005      2.0        1.0        2</span></span>
+<span id="cb8-278"><a href="#cb8-278" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                2.00       0.00 21005      2.0        2.0        2</span></span>
+<span id="cb8-279"><a href="#cb8-279" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  1.59       0.49 21005      2.0        1.0        2</span></span>
+<span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                    48.48      11.84 21005     49.0       17.0       96</span></span>
+<span id="cb8-281"><a href="#cb8-281" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              76982.13  184976.46 21005  44543.0  -800000.0  5000000</span></span>
+<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           739081.25 1671801.15 21005 271012.9  -464159.8 19999748</span></span>
+<span id="cb8-283"><a href="#cb8-283" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      796037.51 1705697.57 21005 316000.0        0.0 20000000</span></span>
+<span id="cb8-284"><a href="#cb8-284" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              689950.83 1576458.39 21005 256354.0 -3614776.0 19999748</span></span>
+<span id="cb8-285"><a href="#cb8-285" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*           1.06       0.24 21005      1.0        1.0        2</span></span>
+<span id="cb8-286"><a href="#cb8-286" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*      1.18       0.38 21005      1.0        1.0        2</span></span>
+<span id="cb8-287"><a href="#cb8-287" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-288"><a href="#cb8-288" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             1.97     1.87</span></span>
+<span id="cb8-289"><a href="#cb8-289" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           1.92     1.68</span></span>
+<span id="cb8-290"><a href="#cb8-290" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             3.65    11.30</span></span>
+<span id="cb8-291"><a href="#cb8-291" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -0.56    -1.69</span></span>
+<span id="cb8-292"><a href="#cb8-292" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*               -1.83     1.36</span></span>
+<span id="cb8-293"><a href="#cb8-293" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*               0.70    -1.52</span></span>
+<span id="cb8-294"><a href="#cb8-294" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*      1.69     0.87</span></span>
+<span id="cb8-295"><a href="#cb8-295" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -2.72     5.40</span></span>
+<span id="cb8-296"><a href="#cb8-296" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*             NaN      NaN</span></span>
+<span id="cb8-297"><a href="#cb8-297" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*             -0.39    -1.85</span></span>
+<span id="cb8-298"><a href="#cb8-298" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                 0.06    -0.34</span></span>
+<span id="cb8-299"><a href="#cb8-299" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             14.98   330.37</span></span>
+<span id="cb8-300"><a href="#cb8-300" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            6.61    57.96</span></span>
+<span id="cb8-301"><a href="#cb8-301" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       6.53    56.79</span></span>
+<span id="cb8-302"><a href="#cb8-302" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               6.77    61.61</span></span>
+<span id="cb8-303"><a href="#cb8-303" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       3.74    11.97</span></span>
+<span id="cb8-304"><a href="#cb8-304" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.68     0.82</span></span>
+<span id="cb8-305"><a href="#cb8-305" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-306"><a href="#cb8-306" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $political.afl.0</span></span>
+<span id="cb8-307"><a href="#cb8-307" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         mean         sd     n   median        min      max</span></span>
+<span id="cb8-308"><a href="#cb8-308" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                 1.10       0.30 26479      1.0        1.0        2</span></span>
+<span id="cb8-309"><a href="#cb8-309" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*               1.15       0.36 26479      1.0        1.0        2</span></span>
+<span id="cb8-310"><a href="#cb8-310" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                 1.05       0.21 26479      1.0        1.0        2</span></span>
+<span id="cb8-311"><a href="#cb8-311" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                1.70       0.46 26479      2.0        1.0        2</span></span>
+<span id="cb8-312"><a href="#cb8-312" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                    1.75       0.43 26479      2.0        1.0        2</span></span>
+<span id="cb8-313"><a href="#cb8-313" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                   1.26       0.44 26479      1.0        1.0        2</span></span>
+<span id="cb8-314"><a href="#cb8-314" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*          1.00       0.00 26479      1.0        1.0        1</span></span>
+<span id="cb8-315"><a href="#cb8-315" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                1.85       0.36 26479      2.0        1.0        2</span></span>
+<span id="cb8-316"><a href="#cb8-316" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                1.65       0.48 26479      2.0        1.0        2</span></span>
+<span id="cb8-317"><a href="#cb8-317" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                  1.64       0.48 26479      2.0        1.0        2</span></span>
+<span id="cb8-318"><a href="#cb8-318" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                    53.46      14.07 26479     53.0       17.0      101</span></span>
+<span id="cb8-319"><a href="#cb8-319" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income              64184.65  171285.19 26479  37550.0  -800000.0  5000000</span></span>
+<span id="cb8-320"><a href="#cb8-320" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           661085.85 1499929.43 26479 246738.6  -627904.2 19999748</span></span>
+<span id="cb8-321"><a href="#cb8-321" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      711676.72 1526257.28 26479 289848.1        0.0 20000000</span></span>
+<span id="cb8-322"><a href="#cb8-322" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              630009.07 1427490.00 26479 236061.6 -2814200.0 19999748</span></span>
+<span id="cb8-323"><a href="#cb8-323" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*           1.04       0.20 26479      1.0        1.0        2</span></span>
+<span id="cb8-324"><a href="#cb8-324" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*      1.19       0.39 26479      1.0        1.0        2</span></span>
+<span id="cb8-325"><a href="#cb8-325" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-326"><a href="#cb8-326" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             2.65     5.02</span></span>
+<span id="cb8-327"><a href="#cb8-327" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           1.92     1.69</span></span>
+<span id="cb8-328"><a href="#cb8-328" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             4.27    16.25</span></span>
+<span id="cb8-329"><a href="#cb8-329" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -0.86    -1.25</span></span>
+<span id="cb8-330"><a href="#cb8-330" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*               -1.17    -0.62</span></span>
+<span id="cb8-331"><a href="#cb8-331" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*               1.08    -0.82</span></span>
+<span id="cb8-332"><a href="#cb8-332" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*       NaN      NaN</span></span>
+<span id="cb8-333"><a href="#cb8-333" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -1.98     1.93</span></span>
+<span id="cb8-334"><a href="#cb8-334" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*           -0.64    -1.59</span></span>
+<span id="cb8-335"><a href="#cb8-335" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*             -0.56    -1.68</span></span>
+<span id="cb8-336"><a href="#cb8-336" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                 0.02    -0.46</span></span>
+<span id="cb8-337"><a href="#cb8-337" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             17.88   441.53</span></span>
+<span id="cb8-338"><a href="#cb8-338" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            7.20    71.35</span></span>
+<span id="cb8-339"><a href="#cb8-339" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       7.12    70.04</span></span>
+<span id="cb8-340"><a href="#cb8-340" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               7.20    72.41</span></span>
+<span id="cb8-341"><a href="#cb8-341" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       4.70    20.11</span></span>
+<span id="cb8-342"><a href="#cb8-342" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.60     0.55</span></span>
+<span id="cb8-343"><a href="#cb8-343" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb8-344"><a href="#cb8-344" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $political.afl.1</span></span>
+<span id="cb8-345"><a href="#cb8-345" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                          mean         sd    n   median        min      max</span></span>
+<span id="cb8-346"><a href="#cb8-346" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*                  1.18       0.39 6286      1.0        1.0        2</span></span>
+<span id="cb8-347"><a href="#cb8-347" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*                1.08       0.27 6286      1.0        1.0        2</span></span>
+<span id="cb8-348"><a href="#cb8-348" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*                  1.05       0.22 6286      1.0        1.0        2</span></span>
+<span id="cb8-349"><a href="#cb8-349" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*                 1.69       0.46 6286      2.0        1.0        2</span></span>
+<span id="cb8-350"><a href="#cb8-350" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*                     1.80       0.40 6286      2.0        1.0        2</span></span>
+<span id="cb8-351"><a href="#cb8-351" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*                    1.57       0.50 6286      2.0        1.0        2</span></span>
+<span id="cb8-352"><a href="#cb8-352" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*           2.00       0.00 6286      2.0        2.0        2</span></span>
+<span id="cb8-353"><a href="#cb8-353" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*                 1.89       0.31 6286      2.0        1.0        2</span></span>
+<span id="cb8-354"><a href="#cb8-354" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*                 1.59       0.49 6286      2.0        1.0        2</span></span>
+<span id="cb8-355"><a href="#cb8-355" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*                   1.78       0.41 6286      2.0        1.0        2</span></span>
+<span id="cb8-356"><a href="#cb8-356" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                     55.72      15.01 6286     56.0       17.0       98</span></span>
+<span id="cb8-357"><a href="#cb8-357" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income               93097.17  189449.94 6286  61000.0  -800000.0  5000000</span></span>
+<span id="cb8-358"><a href="#cb8-358" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth           1102973.00 1941971.68 6286 497431.8  -329697.9 19918815</span></span>
+<span id="cb8-359"><a href="#cb8-359" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets      1169314.40 1980845.88 6286 554688.7        0.0 20000000</span></span>
+<span id="cb8-360"><a href="#cb8-360" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE              1040123.66 1851839.13 6286 469564.3 -3614776.0 19918815</span></span>
+<span id="cb8-361"><a href="#cb8-361" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*            1.12       0.32 6286      1.0        1.0        2</span></span>
+<span id="cb8-362"><a href="#cb8-362" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*       1.17       0.38 6286      1.0        1.0        2</span></span>
+<span id="cb8-363"><a href="#cb8-363" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                     skew kurtosis</span></span>
+<span id="cb8-364"><a href="#cb8-364" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal*             1.65     0.71</span></span>
+<span id="cb8-365"><a href="#cb8-365" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Informal*           3.07     7.43</span></span>
+<span id="cb8-366"><a href="#cb8-366" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both*             4.07    14.57</span></span>
+<span id="cb8-367"><a href="#cb8-367" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan*           -0.80    -1.36</span></span>
+<span id="cb8-368"><a href="#cb8-368" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex*               -1.52     0.32</span></span>
+<span id="cb8-369"><a href="#cb8-369" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ*              -0.28    -1.92</span></span>
+<span id="cb8-370"><a href="#cb8-370" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl*       NaN      NaN</span></span>
+<span id="cb8-371"><a href="#cb8-371" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married*           -2.57     4.58</span></span>
+<span id="cb8-372"><a href="#cb8-372" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob*           -0.37    -1.86</span></span>
+<span id="cb8-373"><a href="#cb8-373" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural*             -1.35    -0.16</span></span>
+<span id="cb8-374"><a href="#cb8-374" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; age                -0.02    -0.69</span></span>
+<span id="cb8-375"><a href="#cb8-375" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Income             13.23   272.15</span></span>
+<span id="cb8-376"><a href="#cb8-376" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Networth            4.89    32.87</span></span>
+<span id="cb8-377"><a href="#cb8-377" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Liquid.Assets       4.89    32.95</span></span>
+<span id="cb8-378"><a href="#cb8-378" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NW.HE               4.95    34.14</span></span>
+<span id="cb8-379"><a href="#cb8-379" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge*       2.40     3.74</span></span>
+<span id="cb8-380"><a href="#cb8-380" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries*  1.75     1.07</span></span></code></pre></div>
+<p><code>Pvot.by.Factr</code> function will create a percentage
+tables.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> sample_data[<span class="fu">c</span>(<span class="st">&quot;multi.level&quot;</span>,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Formal&quot;</span>,<span class="st">&quot;L.Both&quot;</span>,<span class="st">&quot;No.Loan&quot;</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;region&quot;</span>, <span class="st">&quot;sex&quot;</span>, <span class="st">&quot;educ&quot;</span>, <span class="st">&quot;political.afl&quot;</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;married&quot;</span>, <span class="st">&quot;havejob&quot;</span>, <span class="st">&quot;rural&quot;</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;fin.knowldge&quot;</span>, <span class="st">&quot;fin.intermdiaries&quot;</span>)]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">Pvot.by.Factr</span>(df)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                        0      1      3      2</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; multi.level       69.59% 30.41%    NA%    NA%</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Formal            88.35% 11.65%    NA%    NA%</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; L.Both            95.21%  4.79%    NA%    NA%</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; No.Loan           30.41% 69.59%    NA%    NA%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; region               NA% 48.26% 24.48% 27.26%</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sex               23.73% 76.27%    NA%    NA%</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; educ              67.93% 32.07%    NA%    NA%</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; political.afl     80.81% 19.19%    NA%    NA%</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; married           13.99% 86.01%    NA%    NA%</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; havejob           35.89% 64.11%    NA%    NA%</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; rural             33.64% 66.36%    NA%    NA%</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.knowldge      94.55%  5.45%    NA%    NA%</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; fin.intermdiaries 81.54% 18.46%    NA%    NA%</span></span></code></pre></div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

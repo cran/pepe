@@ -1,0 +1,70 @@
+---
+title: "Pepe Vignette"
+author: "Seyma Kalay"
+data: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Pepe Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(pepe)
+```
+
+
+This package was set for the data visualization. 
+First thing let's see the str of the *sample_data* with `str(sample_data)`. 
+
+`Plot.by.Factr` function will create plotting.
+
+```{r plot ,  fig.width= 7, echo=TRUE}
+df <- sample_data[c("Formal","Informal","L.Both","No.Loan",
+"sex","educ","political.afl","married",
+ "havejob","rural","age","Income","Networth","Liquid.Assets",
+ "NW.HE","fin.knowldge","fin.intermdiaries")]
+ CN = colnames(df)
+ var <- c("educ","rural","sex","havejob","political.afl")
+ name.levels = c("Formal","Informal","L.Both","No.Loan",
+ "sex","educ","political.afl","married",
+ "havejob","rural","age","Income","Networth","Liquid.Assets",
+ "NW.HE","fin.knowldge","fin.intermdiaries")
+
+XXX <- df4.Plot.by.Factr(var,df)$Summ.Stats.long
+Plot.by.Factr(XXX, name.levels)
+
+```
+
+
+`df4.Plot.by.Factr` function will create group stats.
+
+```{r df4plot, echo=TRUE}
+df4.Plot.by.Factr(var,df)
+
+```
+
+`Stats.by.Factr` function will create group stats.
+
+```{r statsfactr, echo=TRUE}
+ Stats.by.Factr(var, df)
+```
+
+
+
+`Pvot.by.Factr` function will create a percentage tables.
+```{r pvotfactr, echo=TRUE}
+df <- sample_data[c("multi.level",
+"Formal","L.Both","No.Loan",
+ "region", "sex", "educ", "political.afl",
+ "married", "havejob", "rural",
+ "fin.knowldge", "fin.intermdiaries")]
+ Pvot.by.Factr(df)
+```
